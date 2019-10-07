@@ -1,4 +1,4 @@
-arr = [1, 3, 5, 7, 1, 3, 4, 8]
+arr = [1, 3, 5, 7, 10, 6, 2, 0, 4, 8]
 
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
@@ -8,8 +8,9 @@ def selection_sort( arr ):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        print(arr[cur_index])
-
+        # print(arr[cur_index])
+        for j in range(cur_index, len(arr)):
+            print(f"this is arr {arr}, this is j: {arr[j]}, this is the current index: {cur_index}")
 
 
         # TO-DO: swap
