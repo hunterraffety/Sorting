@@ -58,10 +58,26 @@ def bubble_sort( arr ):
     while swap:
         swap = False
         for i in range(0, len(arr) - 1):
-            print(f"index: {i}, array item in that index: {arr[i]}")
+            # print(f"index: {i}, array item in that index: {arr[i]}")
+            #if the current number is bigger than the number directly to the right [i+1], we need to swap them
+            if arr[i] > arr[i + 1]:
+                print(arr[i])
+                temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
+                swap = True
+                # brady wrote items[i], items[i+1] = items[i+1], items[i] called it an "inline swap" this can be refactored similarly in selection sort too and I think that makes sense and is simpler.
     return arr
 
+
+    """ recursion sort
+    
+    """
+
 print(bubble_sort(arr))
+
+
+
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
 
