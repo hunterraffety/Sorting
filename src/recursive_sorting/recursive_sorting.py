@@ -31,3 +31,68 @@ def merge_sort_in_place(arr, l, r):
 def timsort( arr ):
 
     return arr
+
+
+
+
+
+
+
+
+items = [1, 2, 3, 45, 5,12, 1, 3, 4, 5, 6]
+
+def quicksort(items):
+    if len(items) <= 1:
+        return items
+    # select a pivot
+    pivot = items[-1]
+    left = []
+    right = []
+    for i in range(0, len(items) -1):
+        # move smaller to left
+        item = items[i]
+        if item < pivot:
+            left.append(item)
+        else:
+            right.append(item)
+        # move larger to right
+        # lhs / rhs = 1, repeat first 3 steps
+    return quicksort(left) + [pivot] + quicksort(right)
+
+print(quicksort(items))
+
+
+
+# def partition(data):
+#     left = []
+#     pivot = data[0]
+#     right = []
+#     for v in data[1:]:
+
+def quick_sort_A( books, low, high ):
+    # base case
+    if low >= high:
+        return books
+    # recursive case
+    else:
+        # divide
+        pivot_index = low
+        # for each element in subarray
+        for i in range(low, high):
+            if books[i].genre < books[pivot_index].genre:
+                # double swap to move smaller elements to correct index
+                # move current element to the right of pivot
+                temp = books[pivot_index+1]
+                books[pivot_index+1] = books[i]
+                books[i] = temp
+                # swap pivot with element on its right
+                temp = books[pivot_index]
+                books[pivot_index] = books[pivot_index+1]
+                books[pivot_index+1] = temp
+                pivot_index += 1
+        # conquer
+        # Quick Sort everything left of the pivot
+        books = quick_sort_A(books, low, pivot_index)
+        # Quick Sort everything right of the pivot
+        books = quick_sort_A(books, pivot_index+1, high)
+        return books
