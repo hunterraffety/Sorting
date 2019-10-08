@@ -82,3 +82,21 @@ print(bubble_sort(arr))
 def count_sort( arr, maximum=-1 ):
 
     return arr
+
+
+#recursive python
+def print_numbers(n):
+    if n >= 0:
+        print(n)
+        print_numbers(n - 1)
+            
+print_numbers(10)
+
+def factorial(n):
+    print(n)
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
