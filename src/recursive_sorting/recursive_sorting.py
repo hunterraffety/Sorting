@@ -1,11 +1,20 @@
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
+# TO-DO: complete the helper function below to merge 2 sorted arrays
+arrA = [1, 2, 3, 4]
+arrB = [5, 6, 7, 8, 9]
+
 def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
+    elements = len( arrA ) + len( arrB ) #gives you the total count of elements
+    merged_arr = [0] * elements #sets up an empty list for you to append things into?
     # TO-DO
-    
+    print(elements)  # returns count of elements
+    print(merged_arr) # returns 9 empty spaces (given 9 elements)
+    print(arrA[0])
+    # starting at beginning of `a` and `b`
+    # compare the next value of each
+    # add smallest to `merged_arr`
     return merged_arr
 
+print(merge(arrA, arrB))
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
@@ -59,7 +68,7 @@ def quicksort(items):
         # lhs / rhs = 1, repeat first 3 steps
     return quicksort(left) + [pivot] + quicksort(right)
 
-print(quicksort(items))
+# print(quicksort(items))
 
 
 
