@@ -66,7 +66,10 @@ print(merge(arrA, arrB))
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-
+    # need to check the array is large enough
+    # need to split arr into two. // by 2
+    # need to define which sides are which by recursively calling merge_sort
+    # need to join with merge helper function
     return arr
 
 
