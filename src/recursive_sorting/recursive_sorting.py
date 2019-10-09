@@ -25,16 +25,30 @@ def merge( arrA, arrB ):
     # sounds like I need two for loops. The first one needs to keep track of the value of the thing inside of it at the specified index
     i = 0
     j = 0
-    while i < len(arrA) and j < len(arrB):
+
+    for i in range(elements):
+        if i >= len(arrA):  # this guy is empty
+            print(arrB[j], merged_arr[i])
+            merged_arr[i] = arrB[j]
+            j += 1 # ends
+        elif i >= len(arrB):  # this guy is empty
+            print(arrA[i], merged_arr[i])
+            merged_arr[i] = arrA[i]
+            i =+ 1 # ends
+    # while i < len(arrA) and j < len(arrB):
         # current = i
-        if arrA[i] < arrB[j]:
-            merged_arr.append(arrA[i]) #appends item, but at the end, doesn't overwrite the zeros that were populated based on the elements
+        elif arrA[i] < arrB[j]: # element at this location is smaller
+            print(arrA[i], merged_arr[i])
+            merged_arr[i] = arrA[i]
+            # merged_arr.append(arrA[i]) #appends item, but at the end, doesn't overwrite the zeros that were populated based on the elements
             i += 1 # increment the index item
-        else:
-            merged_arr.append(arrB[j])
+        else: # element at arrB is smaller
+            print(arrB[j], merged_arr[i])
+            merged_arr[i] = arrB[j]
+            # merged_arr.append(arrB[j])
             j += 1
-        merged_arr = merged_arr + arrA[i:]
-        merged_arr = merged_arr + arrB[j:]
+        # merged_arr = merged_arr + arrA[i:]
+        # merged_arr = merged_arr + arrB[j:]
         # print(merged_arr)
     # while len(merged_arr) < elements:
         # for i in range(0, len(arrA) - 1):
