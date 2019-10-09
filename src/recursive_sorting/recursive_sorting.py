@@ -1,13 +1,13 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 arrA = [1, 2, 3, 4]
-arrB = [5, 6, 7, 8, 9]
+arrB = [5, 6, 7, 8]
 
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB ) #gives you the total count of elements
     merged_arr = [0] * elements #sets up an empty list for you to append things into?
     # TO-DO
-    print(elements)  # returns count of elements
-    print(merged_arr) # returns 9 empty spaces (given 9 elements)
+    # print(elements)  # returns count of elements
+    # print(merged_arr) # returns 9 empty spaces (given 9 elements)
     # print(arrA[0])
     # starting at beginning of `a` and `b`
     # while arrA and arrB:
@@ -23,15 +23,27 @@ def merge( arrA, arrB ):
     # i need to check the value in the first array's index of 0 and determine whether or not it is greater than the second arrays value held in index 0, and depending on that, appending the value to the merged_arr
 
     # sounds like I need two for loops. The first one needs to keep track of the value of the thing inside of it at the specified index
-    while len(merged_arr) < elements:
-        for i in range(0, len(arrA) - 1):
-            for j in range(0, len(arrB) - 1):
-                print(arrA[i], arrB[j])
-                if arrA[i] < arrB[j]:
-                    merged_arr.append(arrA[i])
-                else:
-                    merged_arr.append(arrB[j])
-
+    i = 0
+    j = 0
+    while i < len(arrA) and j < len(arrB):
+        # current = i
+        if arrA[i] < arrB[j]:
+            merged_arr.append(arrA[i]) #appends item, but at the end, doesn't overwrite the zeros that were populated based on the elements
+            i += 1 # increment the index item
+        else:
+            merged_arr.append(arrB[j])
+            j += 1
+        merged_arr = merged_arr + arrA[i:]
+        merged_arr = merged_arr + arrB[j:]
+        # print(merged_arr)
+    # while len(merged_arr) < elements:
+        # for i in range(0, len(arrA) - 1):
+        #     for j in range(0, len(arrB) - 1):
+        #         print(arrA[i], arrB[j])
+        #         if arrA[i] < arrB[j]:
+        #             merged_arr.append(arrA[i])
+        #         else:
+        #             merged_arr.append(arrB[j])
 
     return merged_arr
 
